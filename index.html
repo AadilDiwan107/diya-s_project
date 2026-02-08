@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ProNet | Smart Placement & Job Network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  color:#ffffff;
+}
+
+.text-muted{
+  color:#cbd5e1!important;
+}
+
+.navbar{
+  background:rgba(2,6,23,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #1e293b;
+}
+
+.hero{padding:90px 0;}
+
+.hero h1 span{
+  background:linear-gradient(135deg,#6366f1,#22d3ee);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.btn-gradient{
+  background:linear-gradient(135deg,#6366f1,#22d3ee);
+  border:none;
+  color:#fff;
+}
+
+.role-card{
+  background:#0f172a;
+  border:1px solid #1e293b;
+  border-radius:18px;
+  transition:.3s;
+  height:100%;
+  color:#fff;
+}
+
+.role-card:hover{
+  transform:translateY(-6px);
+  border-color:#38bdf8;
+  box-shadow:0 10px 30px rgba(56,189,248,.15);
+}
+
+.role-icon{
+  font-size:36px;
+  color:#38bdf8;
+}
+
+.role-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  height:100%;
+}
+
+footer{
+  border-top:1px solid #1e293b;
+  color:#cbd5e1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar px-4 py-3">
+  <a class="navbar-brand fw-bold text-light" href="#">⚡ ProNet</a>
+  <div class="ms-auto d-flex gap-2">
+    <a href="login.html" class="btn btn-outline-light btn-sm">Login</a>
+    <a href="signup.html" class="btn btn-gradient btn-sm">Register</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center container">
+  <h1 class="fw-bold display-5">
+    Smart <span>Placement & Job Network</span><br>
+    for Students & Recruiters
+  </h1>
+
+  <p class="text-muted mt-3 fs-5">
+    A modern platform connecting students, job seekers,<br>
+    placement coordinators and recruiters.
+  </p>
+
+  <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+    <a href="#" class="btn btn-gradient btn-lg px-4">Get Started</a>
+    <a href="#roles" class="btn btn-outline-light btn-lg px-4">Explore Roles</a>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="container my-5" id="roles">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-white">Who is this platform for?</h2>
+    <p class="text-muted">Designed for every role in the placement ecosystem</p>
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <a href="student.html" class="role-link">
+        <div class="role-card p-4 text-center">
+          <div class="role-icon mb-3"><i class="bi bi-mortarboard-fill"></i></div>
+          <h5>Students</h5>
+          <p class="text-muted">Build skills and apply for jobs.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a href="student.html" class="role-link">
+        <div class="role-card p-4 text-center">
+          <div class="role-icon mb-3"><i class="bi bi-briefcase-fill"></i></div>
+          <h5>Job Seekers</h5>
+          <p class="text-muted">Find full-time and remote jobs.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a href="coordinator.html" class="role-link">
+        <div class="role-card p-4 text-center">
+          <div class="role-icon mb-3"><i class="bi bi-building"></i></div>
+          <h5>Placement Coordinators</h5>
+          <p class="text-muted">Manage students and drives.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6">
+      <a href="recruiter.html" class="role-link">
+        <div class="role-card p-4 text-center">
+          <div class="role-icon mb-3"><i class="bi bi-person-check-fill"></i></div>
+          <h5>Recruiters</h5>
+          <p class="text-muted">Post jobs and hire talent.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-6">
+      <a href="admin.html" class="role-link">
+        <div class="role-card p-4 text-center">
+          <div class="role-icon mb-3"><i class="bi bi-shield-lock-fill"></i></div>
+          <h5>Admin</h5>
+          <p class="text-muted">Monitor and control platform.</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 mt-5">
+  <p class="mb-1">© 2026 ProNet. All rights reserved.</p>
+  <small>Built for students, recruiters & placement teams</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
