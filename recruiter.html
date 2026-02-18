@@ -16,6 +16,11 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
 .sidebar a:hover,.sidebar a.active{background:#1e40af;color:#fff;}
 .card{background:#0f172a;border:1px solid #1e293b;border-radius:16px;color:#fff;}
 .text-muted{color:#cbd5e1!important;}
+.table{color:#fff;}
+.table thead{background:#1e293b;}
+.progress{height:8px;background:#020617;}
+.progress-bar{background:linear-gradient(135deg,#6366f1,#22d3ee);}
+.badge-skill{background:#020617;border:1px solid #334155;color:#e5e7eb;border-radius:12px;padding:4px 10px;font-size:12px;margin:2px;}
 @media(max-width:768px){
 .sidebar{position:fixed;left:-260px;top:0;z-index:1000;transition:.3s}
 .sidebar.show{left:0}
@@ -26,9 +31,10 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
 <body>
 <div class="d-flex">
 
+<!-- SIDEBAR -->
 <div class="sidebar p-4" id="sidebar">
   <h4 class="fw-bold mb-4">🏢 Recruiter</h4>
-  <a href="index.html">Back to Home</a>
+  <a href="index.html"><i class="bi bi-house"></i> Back to Home</a>
   <a class="active" href="#">Dashboard</a>
   <a href="#">Post Job</a>
   <a href="#">Applicants</a>
@@ -36,8 +42,10 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
   <a href="login.html">Logout</a>
 </div>
 
+<!-- MAIN -->
 <div class="flex-grow-1 p-4">
 
+<!-- TOP BAR -->
 <div class="d-flex align-items-center gap-3 mb-4">
   <button class="btn btn-outline-info d-md-none" onclick="toggleSidebar()">
     <i class="bi bi-list"></i>
@@ -48,6 +56,7 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
   <h4 class="fw-bold mb-0">Dashboard</h4>
 </div>
 
+<!-- STATS -->
 <div class="row g-4 mb-4">
   <div class="col-md-4 col-6">
     <div class="card p-3 text-center">
@@ -55,12 +64,14 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
       <h4>8</h4>
     </div>
   </div>
+
   <div class="col-md-4 col-6">
     <div class="card p-3 text-center">
       <h6>Total Applicants</h6>
       <h4>146</h4>
     </div>
   </div>
+
   <div class="col-md-4 col-6">
     <div class="card p-3 text-center">
       <h6>Shortlisted</h6>
@@ -69,12 +80,84 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
   </div>
 </div>
 
-<h5 class="fw-semibold mb-3">Recent Job Posts</h5>
-<div class="card p-3 mb-3">
-  Frontend Developer – Full Time
+<!-- HIRING FUNNEL -->
+<div class="card p-4 mb-4">
+  <h5 class="mb-3">Hiring Progress</h5>
+  <small class="text-muted">Application Review</small>
+  <div class="progress mb-3">
+    <div class="progress-bar" style="width:60%"></div>
+  </div>
+
+  <small class="text-muted">Interview Stage</small>
+  <div class="progress mb-3">
+    <div class="progress-bar" style="width:35%"></div>
+  </div>
+
+  <small class="text-muted">Final Selection</small>
+  <div class="progress">
+    <div class="progress-bar" style="width:15%"></div>
+  </div>
 </div>
-<div class="card p-3">
-  Software Intern – Remote
+
+<!-- APPLICANTS TABLE -->
+<div class="card p-4 mb-4">
+  <h5 class="mb-3">Recent Applicants</h5>
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Skills</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rahul Sharma</td>
+          <td>
+            <span class="badge-skill">React</span>
+            <span class="badge-skill">JavaScript</span>
+          </td>
+          <td><span class="badge bg-warning text-dark">In Review</span></td>
+          <td>
+            <button class="btn btn-sm btn-success">Shortlist</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Anjali Verma</td>
+          <td>
+            <span class="badge-skill">Python</span>
+            <span class="badge-skill">Django</span>
+          </td>
+          <td><span class="badge bg-success">Interview</span></td>
+          <td>
+            <button class="btn btn-sm btn-danger">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- RECENT JOB POSTS -->
+<div class="card p-4 mb-4">
+  <h5 class="mb-3">Recent Job Posts</h5>
+  <div class="mb-3">
+    <strong>Frontend Developer – Full Time</strong>
+    <span class="badge bg-success float-end">Active</span>
+  </div>
+  <div>
+    <strong>Software Intern – Remote</strong>
+    <span class="badge bg-secondary float-end">Closed</span>
+  </div>
+</div>
+
+<!-- INTERVIEW SCHEDULE -->
+<div class="card p-4">
+  <h5 class="mb-3">Upcoming Interviews</h5>
+  <p class="text-muted">• Rahul Sharma – 25 Feb – 10:00 AM</p>
+  <p class="text-muted">• Anjali Verma – 26 Feb – 2:00 PM</p>
 </div>
 
 </div>
@@ -85,5 +168,6 @@ function toggleSidebar(){
   document.getElementById("sidebar").classList.toggle("show");
 }
 </script>
+
 </body>
 </html>
