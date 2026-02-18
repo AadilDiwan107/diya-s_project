@@ -11,11 +11,17 @@
 
 <style>
 body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
+
 .sidebar{width:260px;min-height:100vh;background:#0f172a;border-right:1px solid #1e293b;}
 .sidebar a{color:#e5e7eb;text-decoration:none;display:block;padding:12px 18px;border-radius:10px;margin-bottom:6px;}
 .sidebar a:hover,.sidebar a.active{background:#1e40af;color:#fff;}
+
 .card{background:#0f172a;border:1px solid #1e293b;border-radius:16px;color:#fff;}
 .text-muted{color:#cbd5e1!important;}
+
+.table{color:#fff;}
+.table thead{background:#1e293b;}
+
 @media(max-width:768px){
 .sidebar{position:fixed;left:-260px;top:0;z-index:1000;transition:.3s}
 .sidebar.show{left:0}
@@ -26,9 +32,10 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
 <body>
 <div class="d-flex">
 
+<!-- SIDEBAR -->
 <div class="sidebar p-4" id="sidebar">
   <h4 class="fw-bold mb-4">🛡️ Admin</h4>
-  <a href="index.html">Back to Home</a>
+  <a href="index.html"><i class="bi bi-house"></i> Back to Home</a>
   <a class="active" href="#">Dashboard</a>
   <a href="#">Manage Users</a>
   <a href="#">Manage Jobs</a>
@@ -36,8 +43,10 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
   <a href="login.html">Logout</a>
 </div>
 
+<!-- MAIN -->
 <div class="flex-grow-1 p-4">
 
+<!-- TOP BAR -->
 <div class="d-flex align-items-center gap-3 mb-4">
   <button class="btn btn-outline-info d-md-none" onclick="toggleSidebar()">
     <i class="bi bi-list"></i>
@@ -48,11 +57,87 @@ body{font-family:'Inter',sans-serif;background:#020617;color:#f8fafc;}
   <h4 class="fw-bold mb-0">Dashboard</h4>
 </div>
 
-<div class="row g-4">
-  <div class="col-md-3 col-6"><div class="card p-3 text-center"><h6>Total Users</h6><h4>540</h4></div></div>
-  <div class="col-md-3 col-6"><div class="card p-3 text-center"><h6>Students</h6><h4>350</h4></div></div>
-  <div class="col-md-3 col-6"><div class="card p-3 text-center"><h6>Recruiters</h6><h4>40</h4></div></div>
-  <div class="col-md-3 col-6"><div class="card p-3 text-center"><h6>Jobs</h6><h4>120</h4></div></div>
+<!-- STATS -->
+<div class="row g-4 mb-4">
+  <div class="col-md-3 col-6">
+    <div class="card p-3 text-center">
+      <h6>Total Users</h6>
+      <h4>540</h4>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-6">
+    <div class="card p-3 text-center">
+      <h6>Students</h6>
+      <h4>350</h4>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-6">
+    <div class="card p-3 text-center">
+      <h6>Recruiters</h6>
+      <h4>40</h4>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-6">
+    <div class="card p-3 text-center">
+      <h6>Active Jobs</h6>
+      <h4>120</h4>
+    </div>
+  </div>
+</div>
+
+<!-- RECENT USERS -->
+<div class="card p-4 mb-4">
+  <h5 class="mb-3">Recent Users</h5>
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rahul Sharma</td>
+          <td>Student</td>
+          <td><span class="badge bg-success">Active</span></td>
+          <td><button class="btn btn-sm btn-danger">Block</button></td>
+        </tr>
+        <tr>
+          <td>TechCorp HR</td>
+          <td>Recruiter</td>
+          <td><span class="badge bg-warning text-dark">Pending</span></td>
+          <td><button class="btn btn-sm btn-success">Approve</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- RECENT JOBS -->
+<div class="card p-4 mb-4">
+  <h5 class="mb-3">Recent Job Posts</h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item bg-transparent text-light border-secondary">
+      Frontend Intern – TechCorp (12 Applicants)
+    </li>
+    <li class="list-group-item bg-transparent text-light border-secondary">
+      Software Engineer – StartupX (25 Applicants)
+    </li>
+  </ul>
+</div>
+
+<!-- SYSTEM ACTIVITY -->
+<div class="card p-4">
+  <h5 class="mb-3">System Activity</h5>
+  <p class="text-muted">• 15 new users registered today</p>
+  <p class="text-muted">• 5 new jobs posted</p>
+  <p class="text-muted">• 3 recruiters approved</p>
 </div>
 
 </div>
@@ -63,5 +148,6 @@ function toggleSidebar(){
   document.getElementById("sidebar").classList.toggle("show");
 }
 </script>
+
 </body>
 </html>
